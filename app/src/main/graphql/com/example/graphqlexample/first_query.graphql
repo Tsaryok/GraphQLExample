@@ -1,0 +1,18 @@
+mutation AddReactionToIssue($subjectId: ID!, $content: ReactionContent!) {
+    addReaction(input:{subjectId:$subjectId ,content:$content}) {
+        reaction {
+            content
+        }
+        subject {
+            id
+        }
+    }
+}
+
+query FindIssueID {
+    repository(owner:"octocat", name:"Hello-World") {
+        issue(number:349) {
+            id
+        }
+    }
+}
